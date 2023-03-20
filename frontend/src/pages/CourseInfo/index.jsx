@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import Breadcrumb from '../../components/Breadcrumb';
 import CourseDetailBox from '../../components/CourseDetailBox';
+import CommentsTextArea from '../../components/CommentsTextArea';
 import './CourseInfo.css';
 
 const CourseInfo = () => {
@@ -248,9 +249,9 @@ const CourseInfo = () => {
                   </div>
                   <p class='techer-details__footer'>علاقه مند به دنیای وب و زبان جاوااسکریپت</p>
                 </div>
+                <CommentsTextArea />
               </div>
             </div>
-            {/* </div> */}
             <div class='col-4'>
               <div class='courses-info'>
                 <div class='course-info'>

@@ -5,6 +5,7 @@ import Navbar from '../../components/Navbar';
 import Topbar from '../../components/Topbar';
 import Input from '../../components/shared/Input';
 import Button from '../../components/shared/Button';
+import { requiredValidator, minValidator, maxValidator, emailValidator } from '../../utils/rules';
 import './Login.css';
 
 const Login = () => {
@@ -29,11 +30,23 @@ const Login = () => {
           </div>
           <form action='#' className='login-form'>
             <div className='login-form__username'>
-              <Input className='login-form__username-input' type='text' placeholder='نام کاربری یا آدرس ایمیل' element='input' />
+              <Input
+                className='login-form__username-input'
+                type='text'
+                placeholder='نام کاربری یا آدرس ایمیل'
+                element='input'
+                validations={[requiredValidator(), minValidator(8), maxValidator(20), emailValidator()]}
+              />
               <i className='login-form__username-icon fa fa-user'></i>
             </div>
             <div className='login-form__password'>
-              <Input className='login-form__password-input' type='password' placeholder='رمز عبور' element='input' />
+              <Input
+                element='input'
+                type='password'
+                className='login-form__password-input'
+                placeholder='رمز عبور'
+                validations={[requiredValidator(), minValidator(8), maxValidator(18)]}
+              />
               <i className='login-form__password-icon fa fa-lock-open'></i>
             </div>
             <Button className='login-form__btn' type='submit' onClick={userLogin} disabled={false}>
